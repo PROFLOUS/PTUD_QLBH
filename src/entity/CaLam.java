@@ -19,52 +19,53 @@ import java.util.Date;
 
 public class CaLam {
     private String maCa;
-    private String maNV;
+    private NhanVien NV;
     private Date ngayLam;
     private String buoi;
 
     public CaLam() {
     }
 
-    public CaLam(String maCa, String maNV, Date ngayLam, String buoi) {
+    public CaLam(String maCa, Date ngayLam, String buoi) {
         this.maCa = maCa;
-        this.maNV = maNV;
         this.ngayLam = ngayLam;
         this.buoi = buoi;
     }
+
+    
 
     public String getMaCa() {
         return maCa;
     }
 
-    public void setMaCa(String maCa) {
-        this.maCa = maCa;
-    }
-
-    public String getMaNV() {
-        return maNV;
-    }
-
-    public void setMaNV(String maNV) {
-        this.maNV = maNV;
+    public NhanVien getNV() {
+        return NV;
     }
 
     public Date getNgayLam() {
         return ngayLam;
     }
 
-    public void setNgayLam(Date ngayLam) {
-        this.ngayLam = ngayLam;
-    }
-
     public String getBuoi() {
         return buoi;
+    }
+
+    public void setMaCa(String maCa) {
+        this.maCa = maCa;
+    }
+
+    public void setNV(NhanVien NV) {
+        this.NV = NV;
+    }
+
+    public void setNgayLam(Date ngayLam) {
+        this.ngayLam = ngayLam;
     }
 
     public void setBuoi(String buoi) {
         this.buoi = buoi;
     }
-    
-    
+
+   
     
 }

@@ -29,78 +29,76 @@ public class HoaDonNhap {
     private String ghiChu;
     
     
-    private String maNV;
-    private String maNCC;
+    private NhanVien nhanVien;
+    private NhaCC NCC;
 
     public HoaDonNhap() {
     }
 
-    public HoaDonNhap(String maHDNhap, Date ngayLapHD, int soLuong, Double tongTien, String ghiChu, String maNV, String maNCC) {
+    public HoaDonNhap(String maHDNhap, Date ngayLapHD, int soLuong, Double tongTien, String ghiChu) {
         this.maHDNhap = maHDNhap;
         this.ngayLapHD = ngayLapHD;
         this.soLuong = soLuong;
         this.tongTien = tongTien;
         this.ghiChu = ghiChu;
-        this.maNV = maNV;
-        this.maNCC = maNCC;
     }
 
     public String getMaHDNhap() {
         return maHDNhap;
     }
 
-    public void setMaHDNhap(String maHDNhap) {
-        this.maHDNhap = maHDNhap;
-    }
-
     public Date getNgayLapHD() {
         return ngayLapHD;
-    }
-
-    public void setNgayLapHD(Date ngayLapHD) {
-        this.ngayLapHD = ngayLapHD;
     }
 
     public int getSoLuong() {
         return soLuong;
     }
 
-    public void setSoLuong(int soLuong) {
-        this.soLuong = soLuong;
-    }
-
     public Double getTongTien() {
         return tongTien;
-    }
-
-    public void setTongTien(Double tongTien) {
-        this.tongTien = tongTien;
     }
 
     public String getGhiChu() {
         return ghiChu;
     }
 
+    public NhanVien getNhanVien() {
+        return nhanVien;
+    }
+
+    public NhaCC getNCC() {
+        return NCC;
+    }
+
+    public void setMaHDNhap(String maHDNhap) {
+        this.maHDNhap = maHDNhap;
+    }
+
+    public void setNgayLapHD(Date ngayLapHD) {
+        this.ngayLapHD = ngayLapHD;
+    }
+
+    public void setSoLuong(int soLuong) {
+        this.soLuong = soLuong;
+    }
+
+    public void setTongTien(Double tongTien) {
+        this.tongTien = tongTien;
+    }
+
     public void setGhiChu(String ghiChu) {
         this.ghiChu = ghiChu;
     }
 
-    public String getMaNV() {
-        return maNV;
+    public void setNhanVien(NhanVien nhanVien) {
+        this.nhanVien = nhanVien;
     }
 
-    public void setMaNV(String maNV) {
-        this.maNV = maNV;
+    public void setNCC(NhaCC NCC) {
+        this.NCC = NCC;
     }
 
-    public String getMaNCC() {
-        return maNCC;
-    }
-
-    public void setMaNCC(String maNCC) {
-        this.maNCC = maNCC;
-    }
-    
     
     
     

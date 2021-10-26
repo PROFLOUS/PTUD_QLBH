@@ -17,52 +17,62 @@ package entity;
 
 public class CT_HDBanHang {
    
-    private String maHDBanHang;
-    private String maSP;
+ 
     private int soLuong;
     private Double donGia;
 
+    
+    private HoaDonBanHang hoaDon;
+    private SanPham sanPham;
+    
     public CT_HDBanHang() {
     }
 
-    public CT_HDBanHang(String maHDBanHang, String maSP, int soLuong, Double donGia) {
-        this.maHDBanHang = maHDBanHang;
-        this.maSP = maSP;
+    public CT_HDBanHang(int soLuong, Double donGia) {
         this.soLuong = soLuong;
         this.donGia = donGia;
-    }
-
-    public String getMaHDBanHang() {
-        return maHDBanHang;
-    }
-
-    public void setMaHDBanHang(String maHDBanHang) {
-        this.maHDBanHang = maHDBanHang;
-    }
-
-    public String getMaSP() {
-        return maSP;
-    }
-
-    public void setMaSP(String maSP) {
-        this.maSP = maSP;
     }
 
     public int getSoLuong() {
         return soLuong;
     }
 
-    public void setSoLuong(int soLuong) {
-        this.soLuong = soLuong;
-    }
-
     public Double getDonGia() {
         return donGia;
+    }
+
+    public HoaDonBanHang getHoaDon() {
+        return hoaDon;
+    }
+
+    public SanPham getSanPham() {
+        return sanPham;
+    }
+
+    public void setSoLuong(int soLuong) {
+        this.soLuong = soLuong;
     }
 
     public void setDonGia(Double donGia) {
         this.donGia = donGia;
     }
 
+    public void setHoaDon(HoaDonBanHang hoaDon) {
+        this.hoaDon = hoaDon;
+    }
+
+    public void setSanPham(SanPham sanPham) {
+        this.sanPham = sanPham;
+    }
+
+    @Override
+    public String toString() {
+        return "CT_HDBanHang{" + "soLuong=" + soLuong + ", donGia=" + donGia + ", hoaDon=" + hoaDon + ", sanPham=" + sanPham + '}';
+    }
+
+    
+
+    
+ 
     
 }

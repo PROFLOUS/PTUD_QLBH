@@ -8,6 +8,8 @@ import Connect.connect;
 import dao.HoaDonDao;
 import entity.HoaDonBanHang;
 import java.awt.List;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 import java.sql.SQLException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -21,7 +23,7 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author GMT
  */
-public class FrmHoaDon extends javax.swing.JPanel {
+public class FrmHoaDon extends javax.swing.JPanel{
     ArrayList<HoaDonBanHang> listHoaDon = new ArrayList<HoaDonBanHang>();
        private javax.swing.table.DefaultTableModel modelTBHoaDon;
     /**
@@ -34,6 +36,7 @@ public class FrmHoaDon extends javax.swing.JPanel {
         
             renderListHoaDon();
         } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 /*
@@ -47,8 +50,8 @@ public class FrmHoaDon extends javax.swing.JPanel {
                 modelTBHoaDon = new DefaultTableModel(title,0);
 		for(HoaDonBanHang s : listHoaDon) {
 			String[] rowData = {
-				s.getMaHD(),changeDateToString(s.getNgayLapHD()),s.getMaKH(),String.valueOf(s.getSoLuong()),String.valueOf(s.getTongTien()),
-                            String.valueOf(s.getTienKhachDua()),s.getMaNV(),s.getGhiChu()
+				s.getMaHD(),changeDateToString(s.getNgayLapHD()),s.getKhachHang().getTenKH(),String.valueOf(s.getSoLuong()),String.valueOf(s.getTongTien()),
+                            String.valueOf(s.getTienKhachDua()),s.getNhanVien().getTenNV(),s.getGhiChu()
 			};
                        
 			modelTBHoaDon.addRow(rowData);
@@ -86,6 +89,8 @@ public class FrmHoaDon extends javax.swing.JPanel {
         btnSearchHD = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         tbHoaDon = new javax.swing.JTable();
+
+        setBackground(new java.awt.Color(243, 244, 237));
 
         jPanel1.setBackground(java.awt.Color.white);
 
@@ -161,9 +166,14 @@ public class FrmHoaDon extends javax.swing.JPanel {
 
             }
         ));
-        tbHoaDon.setRowHeight(25);
+        tbHoaDon.setRowHeight(28);
         tbHoaDon.setShowGrid(true);
         tbHoaDon.setUpdateSelectionOnSort(false);
+        tbHoaDon.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tbHoaDonMouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(tbHoaDon);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -201,15 +211,15 @@ public class FrmHoaDon extends javax.swing.JPanel {
     private void btnSearchHDMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSearchHDMouseClicked
        String text = txtSearchHD.getText();
         AtomicBoolean check = new AtomicBoolean();
-        JOptionPane.showConfirmDialog(jDateChoiseHD, jDateChoiseHD.getDate());
+       
         listHoaDon.forEach(s ->{
             if(s.getMaHD().toUpperCase().equals(text.toUpperCase())){
                 check.set(true);
                  String[] title = { "MaHD", "Ngày Tạo", "Khách Hàng", "Số lượng", "Tổng Tiền", "Tiền Khách Đưa", "Nhân Viên", "Ghi Chú"};
 		 modelTBHoaDon = new DefaultTableModel(title,0);
                  String[] rowData = {
-				s.getMaHD(),changeDateToString(s.getNgayLapHD()),s.getMaKH(),String.valueOf(s.getSoLuong()),String.valueOf(s.getTongTien()),
-                            String.valueOf(s.getTienKhachDua()),s.getMaNV(),s.getGhiChu()
+				s.getMaHD(),changeDateToString(s.getNgayLapHD()),s.getKhachHang().getTenKH(),String.valueOf(s.getSoLuong()),String.valueOf(s.getTongTien()),
+                            String.valueOf(s.getTienKhachDua()),s.getNhanVien().getTenNV(),s.getGhiChu()
 			};
              modelTBHoaDon.addRow(rowData);
                 tbHoaDon.setModel(modelTBHoaDon);
@@ -239,8 +249,18 @@ public class FrmHoaDon extends javax.swing.JPanel {
 
     private void jDateChoiseHDFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jDateChoiseHDFocusLost
         // TODO add your handling code here:
-         System.out.println(jDateChoiseHD.getDate());
+       
     }//GEN-LAST:event_jDateChoiseHDFocusLost
+
+    private void tbHoaDonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tbHoaDonMouseClicked
+        // lay ra row vua click
+        int row = tbHoaDon.getSelectedRow();
+       
+        //lay ra MaHD
+        String maHD = tbHoaDon.getValueAt(row, 0).toString();
+        //JOptionPane.showMessageDialog(jPanel1, maHD);
+        new FrmCT_HoaDon(maHD).setVisible(true);
+    }//GEN-LAST:event_tbHoaDonMouseClicked
 
 
     
@@ -253,4 +273,6 @@ public class FrmHoaDon extends javax.swing.JPanel {
     private javax.swing.JTable tbHoaDon;
     private javax.swing.JTextField txtSearchHD;
     // End of variables declaration//GEN-END:variables
+
+    
 }
