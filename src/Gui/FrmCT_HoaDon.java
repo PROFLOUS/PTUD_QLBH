@@ -9,6 +9,7 @@ import dao.CT_HoaDonDao;
 import dao.HoaDonDao;
 import entity.CT_HDBanHang;
 import entity.HoaDonBanHang;
+import java.awt.Color;
 import java.awt.List;
 import java.text.DateFormat;import java.util.Date;
 
@@ -29,10 +30,16 @@ public class FrmCT_HoaDon extends javax.swing.JFrame {
      */
     public FrmCT_HoaDon(){
          initComponents();
+        // this.setBackground(new Color(1.0f, 1.0f, 1.0f, 0.5f));
+         jpParent.setBackground(new Color(0,0,0,120));
+         this.setLocationRelativeTo(null);
     }
     public FrmCT_HoaDon(String maHD) {
         this.maHD = maHD;
         initComponents();
+        this.setLocationRelativeTo(null);
+         jpParent.setBackground(new Color(0,0,0,64));
+        this.setBackground(new Color(0,0,0,64));
           try {
             connect.getInstance().connect();
             renderInfoHD();
@@ -143,6 +150,7 @@ public class FrmCT_HoaDon extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel3 = new javax.swing.JLabel();
+        jpParent = new javax.swing.JPanel();
         jPanel5 = new javax.swing.JPanel();
         jToggleButton1 = new javax.swing.JToggleButton();
         btnInHD = new javax.swing.JButton();
@@ -187,22 +195,38 @@ public class FrmCT_HoaDon extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(java.awt.Color.white);
+        setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        setUndecorated(true);
+        setPreferredSize(new java.awt.Dimension(1300, 700));
+
+        jpParent.setBackground(java.awt.Color.black);
+        jpParent.setPreferredSize(new java.awt.Dimension(1300, 700));
 
         jPanel5.setBackground(new java.awt.Color(243, 244, 237));
 
         jToggleButton1.setBackground(new java.awt.Color(21, 151, 229));
         jToggleButton1.setForeground(java.awt.Color.white);
+        jToggleButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imgVSicon/system-update.png"))); // NOI18N
         jToggleButton1.setText("Cập nhật");
         jToggleButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         btnInHD.setBackground(new java.awt.Color(21, 151, 229));
         btnInHD.setForeground(java.awt.Color.white);
+        btnInHD.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imgVSicon/bill.png"))); // NOI18N
         btnInHD.setText("In hóa đơn");
+        btnInHD.setToolTipText("");
         btnInHD.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnInHD.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnInHDActionPerformed(evt);
+            }
+        });
 
         btnExit.setBackground(new java.awt.Color(21, 151, 229));
         btnExit.setForeground(java.awt.Color.white);
+        btnExit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imgVSicon/close.png"))); // NOI18N
         btnExit.setText("Thoát");
+        btnExit.setToolTipText("");
         btnExit.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnExit.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -475,10 +499,10 @@ public class FrmCT_HoaDon extends javax.swing.JFrame {
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addGroup(jPanel5Layout.createSequentialGroup()
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnInHD, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jToggleButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
+                        .addComponent(btnInHD)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jToggleButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(btnExit, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel5Layout.createSequentialGroup()
                         .addGap(29, 29, 29)
@@ -495,7 +519,7 @@ public class FrmCT_HoaDon extends javax.swing.JFrame {
                 .addGap(26, 26, 26)
                 .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(24, 24, 24)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 247, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 169, Short.MAX_VALUE)
                 .addGap(18, 18, 18)
                 .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -503,18 +527,35 @@ public class FrmCT_HoaDon extends javax.swing.JFrame {
                     .addComponent(btnExit, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jToggleButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnInHD, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(23, 23, 23))
+                .addContainerGap())
+        );
+
+        javax.swing.GroupLayout jpParentLayout = new javax.swing.GroupLayout(jpParent);
+        jpParent.setLayout(jpParentLayout);
+        jpParentLayout.setHorizontalGroup(
+            jpParentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jpParentLayout.createSequentialGroup()
+                .addGap(285, 285, 285)
+                .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(308, Short.MAX_VALUE))
+        );
+        jpParentLayout.setVerticalGroup(
+            jpParentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpParentLayout.createSequentialGroup()
+                .addContainerGap(120, Short.MAX_VALUE)
+                .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(85, 85, 85))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jpParent, javax.swing.GroupLayout.DEFAULT_SIZE, 1426, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jpParent, javax.swing.GroupLayout.DEFAULT_SIZE, 707, Short.MAX_VALUE)
         );
 
         pack();
@@ -524,6 +565,10 @@ public class FrmCT_HoaDon extends javax.swing.JFrame {
         // TODO add your handling code here:
         this.setVisible(false);
     }//GEN-LAST:event_btnExitMouseClicked
+
+    private void btnInHDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInHDActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnInHDActionPerformed
 
     /**
      * @param args the command line arguments
@@ -590,6 +635,7 @@ public class FrmCT_HoaDon extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator5;
     private javax.swing.JSeparator jSeparator6;
     private javax.swing.JToggleButton jToggleButton1;
+    private javax.swing.JPanel jpParent;
     private javax.swing.JLabel lbDate;
     private javax.swing.JLabel lbGhiChu;
     private javax.swing.JLabel lbGiamGia;

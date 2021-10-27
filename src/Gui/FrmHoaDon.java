@@ -58,6 +58,7 @@ public class FrmHoaDon extends javax.swing.JPanel{
 		}
                
 		tbHoaDon.setModel(modelTBHoaDon);
+                lblNumHD.setText(String.valueOf(listHoaDon.size()));
 	}
          /*
             Chuyen tu date sang String
@@ -87,6 +88,9 @@ public class FrmHoaDon extends javax.swing.JPanel{
         txtSearchHD = new javax.swing.JTextField();
         btnShowHD = new javax.swing.JButton();
         btnSearchHD = new javax.swing.JButton();
+        btnThemHD = new javax.swing.JToggleButton();
+        jLabel1 = new javax.swing.JLabel();
+        lblNumHD = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tbHoaDon = new javax.swing.JTable();
 
@@ -96,6 +100,7 @@ public class FrmHoaDon extends javax.swing.JPanel{
 
         txtSearchHD.setBackground(java.awt.Color.white);
         txtSearchHD.setText("Nhập mã hóa đơn...");
+        txtSearchHD.setToolTipText("");
         txtSearchHD.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
                 txtSearchHDFocusGained(evt);
@@ -104,7 +109,9 @@ public class FrmHoaDon extends javax.swing.JPanel{
 
         btnShowHD.setBackground(new java.awt.Color(21, 151, 229));
         btnShowHD.setForeground(java.awt.Color.white);
+        btnShowHD.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imgVSicon/clipboard.png"))); // NOI18N
         btnShowHD.setText("Hiển thị Hóa Đơn");
+        btnShowHD.setToolTipText("");
         btnShowHD.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnShowHD.setEnabled(false);
         btnShowHD.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -115,7 +122,9 @@ public class FrmHoaDon extends javax.swing.JPanel{
 
         btnSearchHD.setBackground(new java.awt.Color(21, 151, 229));
         btnSearchHD.setForeground(java.awt.Color.white);
+        btnSearchHD.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imgVSicon/search_1.png"))); // NOI18N
         btnSearchHD.setText("Tìm Kiếm");
+        btnSearchHD.setToolTipText("");
         btnSearchHD.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnSearchHD.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -128,6 +137,22 @@ public class FrmHoaDon extends javax.swing.JPanel{
             }
         });
 
+        btnThemHD.setBackground(new java.awt.Color(21, 151, 229));
+        btnThemHD.setForeground(java.awt.Color.white);
+        btnThemHD.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imgVSicon/add.png"))); // NOI18N
+        btnThemHD.setText("Thêm Hóa Đơn");
+        btnThemHD.setToolTipText("");
+        btnThemHD.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnThemHD.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnThemHDMouseClicked(evt);
+            }
+        });
+
+        jLabel1.setText("Số Hóa Đơn: ");
+
+        lblNumHD.setText("2");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -139,19 +164,31 @@ public class FrmHoaDon extends javax.swing.JPanel{
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(txtSearchHD, javax.swing.GroupLayout.PREFERRED_SIZE, 502, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnSearchHD, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(btnShowHD, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(416, Short.MAX_VALUE))
+                        .addComponent(btnSearchHD, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 292, Short.MAX_VALUE)
+                        .addComponent(btnThemHD)
+                        .addGap(14, 14, 14))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(btnShowHD)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel1)
+                        .addGap(18, 18, 18)
+                        .addComponent(lblNumHD)
+                        .addGap(19, 19, 19))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(btnShowHD, javax.swing.GroupLayout.DEFAULT_SIZE, 34, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnShowHD, javax.swing.GroupLayout.DEFAULT_SIZE, 34, Short.MAX_VALUE)
+                    .addComponent(jLabel1)
+                    .addComponent(lblNumHD))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnThemHD, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(txtSearchHD, javax.swing.GroupLayout.DEFAULT_SIZE, 37, Short.MAX_VALUE)
                     .addComponent(btnSearchHD, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
@@ -185,7 +222,7 @@ public class FrmHoaDon extends javax.swing.JPanel{
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jScrollPane1))
-                .addContainerGap(29, Short.MAX_VALUE))
+                .addContainerGap(9, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -262,14 +299,22 @@ public class FrmHoaDon extends javax.swing.JPanel{
         new FrmCT_HoaDon(maHD).setVisible(true);
     }//GEN-LAST:event_tbHoaDonMouseClicked
 
+    private void btnThemHDMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnThemHDMouseClicked
+        // TODO add your handling code here:
+        new FrmBanHang().setVisible(true);
+    }//GEN-LAST:event_btnThemHDMouseClicked
+
 
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnSearchHD;
     private javax.swing.JButton btnShowHD;
+    private javax.swing.JToggleButton btnThemHD;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JLabel lblNumHD;
     private javax.swing.JTable tbHoaDon;
     private javax.swing.JTextField txtSearchHD;
     // End of variables declaration//GEN-END:variables

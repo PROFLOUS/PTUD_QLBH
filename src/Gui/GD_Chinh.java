@@ -44,9 +44,9 @@ public class GD_Chinh extends javax.swing.JFrame {
    public Timer tm;
    public int x= 0;
    public String [] list={
-            "imgVSicon\\clark-street-mercantile-P3pI6xzovu0-unsplash.jpg",
-            "imgVSicon\\clark-street-mercantile-ydcMwcfY5E0-unsplash.jpg",
-            "imgVSicon\\clark-street-mercantile-S042liZk3A8-unsplash1.jpg"
+            "src\\imgVSicon\\clark-street-mercantile-P3pI6xzovu0-unsplash.jpg",
+            "src\\imgVSicon\\clark-street-mercantile-ydcMwcfY5E0-unsplash.jpg",
+            "src\\imgVSicon\\clark-street-mercantile-S042liZk3A8-unsplash1.jpg"
            
         };
     private JTableHeader heder;

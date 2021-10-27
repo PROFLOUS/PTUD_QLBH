@@ -8,11 +8,6 @@ package dao;
  *
  * @author GMT
  */
-public class main {
-    public static void main(String[] args) {
-        String str = "nguyen hoang anh";
-        int pos = str.indexOf(" ");
-        String s = str.substring(pos + 1);
-        System.out.println(s);
-    }
+public class HoaDonNhapDao {
+    
 }
