@@ -12,6 +12,7 @@ public class connect {
 		return instance;
 	}
 	public Connection connect() throws SQLException {
+            
 		String url ="jdbc:sqlserver://localhost:1433;dataBaseName=QLBH";
 		String user="sa";
 		String password="sa";

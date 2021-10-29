@@ -126,9 +126,23 @@ public class FrmHoaDon extends javax.swing.JPanel{
         btnSearchHD.setText("Tìm Kiếm");
         btnSearchHD.setToolTipText("");
         btnSearchHD.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnSearchHD.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseDragged(java.awt.event.MouseEvent evt) {
+                btnSearchHDMouseDragged(evt);
+            }
+        });
         btnSearchHD.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btnSearchHDMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnSearchHDMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnSearchHDMouseExited(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                btnSearchHDMousePressed(evt);
             }
         });
         btnSearchHD.addActionListener(new java.awt.event.ActionListener() {
@@ -165,7 +179,7 @@ public class FrmHoaDon extends javax.swing.JPanel{
                         .addComponent(txtSearchHD, javax.swing.GroupLayout.PREFERRED_SIZE, 502, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(btnSearchHD, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 292, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 275, Short.MAX_VALUE)
                         .addComponent(btnThemHD)
                         .addGap(14, 14, 14))
                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -220,9 +234,9 @@ public class FrmHoaDon extends javax.swing.JPanel{
             .addGroup(layout.createSequentialGroup()
                 .addGap(26, 26, 26)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jScrollPane1))
-                .addContainerGap(9, Short.MAX_VALUE))
+                    .addComponent(jScrollPane1)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(26, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -303,6 +317,26 @@ public class FrmHoaDon extends javax.swing.JPanel{
         // TODO add your handling code here:
         new FrmBanHang().setVisible(true);
     }//GEN-LAST:event_btnThemHDMouseClicked
+
+    private void btnSearchHDMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSearchHDMouseExited
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_btnSearchHDMouseExited
+
+    private void btnSearchHDMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSearchHDMousePressed
+        // TODO add your handling code here:
+       
+         btnShowHD.setBackground(new java.awt.Color(17, 60, 252));
+    }//GEN-LAST:event_btnSearchHDMousePressed
+
+    private void btnSearchHDMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSearchHDMouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnSearchHDMouseEntered
+
+    private void btnSearchHDMouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSearchHDMouseDragged
+        // TODO add your handling code here:
+         btnShowHD.setBackground(new java.awt.Color(17, 60, 252));
+    }//GEN-LAST:event_btnSearchHDMouseDragged
 
 
     

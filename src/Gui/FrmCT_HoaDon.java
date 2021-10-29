@@ -15,7 +15,14 @@ import java.text.DateFormat;import java.util.Date;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Hashtable;
 import javax.swing.table.DefaultTableModel;
+import net.sf.jasperreports.engine.JasperCompileManager;
+import net.sf.jasperreports.engine.JasperExportManager;
+import net.sf.jasperreports.engine.JasperFillManager;
+import net.sf.jasperreports.engine.JasperPrint;
+import net.sf.jasperreports.engine.JasperReport;
+import net.sf.jasperreports.view.JasperViewer;
 
 /**
  *
@@ -134,6 +141,25 @@ public class FrmCT_HoaDon extends javax.swing.JFrame {
     
     
     
+      //Tạo hàm xuất hóa đơn
+    public void printBill(String maHD){
+        try {
+            
+            Hashtable map = new Hashtable();
+            JasperReport report = JasperCompileManager.compileReport("src\\Gui/rptHoaDon.jrxml");
+            
+            map.put("MaHD", maHD);
+                  
+            JasperPrint p = JasperFillManager.fillReport(report,  map, connect.getConnection() );
+            JasperViewer.viewReport(p, false);
+           // JasperExportManager.exportReportToPdfFile(p, "test.pdf");
+        } catch (Exception ex) {
+            System.out.println(ex.getMessage());
+           
+        }
+    }
+    
+    
     
     
     
@@ -216,6 +242,11 @@ public class FrmCT_HoaDon extends javax.swing.JFrame {
         btnInHD.setText("In hóa đơn");
         btnInHD.setToolTipText("");
         btnInHD.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnInHD.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnInHDMouseClicked(evt);
+            }
+        });
         btnInHD.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnInHDActionPerformed(evt);
@@ -569,6 +600,12 @@ public class FrmCT_HoaDon extends javax.swing.JFrame {
     private void btnInHDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInHDActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnInHDActionPerformed
+
+    private void btnInHDMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnInHDMouseClicked
+        // TODO add your handling code here:
+        
+        printBill(maHD);
+    }//GEN-LAST:event_btnInHDMouseClicked
 
     /**
      * @param args the command line arguments
