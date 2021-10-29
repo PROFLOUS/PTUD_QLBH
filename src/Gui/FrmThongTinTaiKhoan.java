@@ -42,6 +42,7 @@ public  Border default_border = BorderFactory.createMatteBorder(0, 0   , 3, 0, n
         pnl_menuTab_TTTK = new javax.swing.JPanel();
         btn_tab_TTTK = new javax.swing.JButton();
         pnl_tab_FormTTTK = new javax.swing.JPanel();
+        jButton1 = new javax.swing.JButton();
 
         setPreferredSize(new java.awt.Dimension(1090, 700));
 
@@ -92,15 +93,23 @@ public  Border default_border = BorderFactory.createMatteBorder(0, 0   , 3, 0, n
 
         pnl_tab_FormTTTK.setBackground(new java.awt.Color(0, 153, 153));
 
+        jButton1.setText("jButton1");
+
         javax.swing.GroupLayout pnl_tab_FormTTTKLayout = new javax.swing.GroupLayout(pnl_tab_FormTTTK);
         pnl_tab_FormTTTK.setLayout(pnl_tab_FormTTTKLayout);
         pnl_tab_FormTTTKLayout.setHorizontalGroup(
             pnl_tab_FormTTTKLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1300, Short.MAX_VALUE)
+            .addGroup(pnl_tab_FormTTTKLayout.createSequentialGroup()
+                .addGap(354, 354, 354)
+                .addComponent(jButton1)
+                .addContainerGap(871, Short.MAX_VALUE))
         );
         pnl_tab_FormTTTKLayout.setVerticalGroup(
             pnl_tab_FormTTTKLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 720, Short.MAX_VALUE)
+            .addGroup(pnl_tab_FormTTTKLayout.createSequentialGroup()
+                .addGap(207, 207, 207)
+                .addComponent(jButton1)
+                .addContainerGap(491, Short.MAX_VALUE))
         );
 
         pnl_FormTTTaiKhoan.add(pnl_tab_FormTTTK, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 80, 1300, 720));
@@ -138,6 +147,7 @@ public  Border default_border = BorderFactory.createMatteBorder(0, 0   , 3, 0, n
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_tab_TTTK;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel lbl_text_TTTK;
     private javax.swing.JPanel pnl_FormTTTaiKhoan;
     private javax.swing.JPanel pnl_menuTab_TTTK;

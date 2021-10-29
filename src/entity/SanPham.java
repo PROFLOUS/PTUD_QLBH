@@ -35,6 +35,25 @@ public class SanPham {
         this.mauSac = mauSac;
     }
 
+    public SanPham(String maSP, String tenSP, Double donGia, String size, String mauSac) {
+        this.maSP = maSP;
+        this.tenSP = tenSP;
+        this.donGia = donGia;
+        this.size = size;
+        this.mauSac = mauSac;
+    }
+
+    public SanPham(String maSP, String tenSP, Double donGia, int soLuong, String size, String mauSac) {
+        this.maSP = maSP;
+        this.tenSP = tenSP;
+        this.donGia = donGia;
+        this.soLuong = soLuong;
+        this.size = size;
+        this.mauSac = mauSac;
+    }
+    
+    
+
     
 
     public DanhMucSP getDmsp() {

@@ -5,8 +5,8 @@
  */
 package Gui;
 
-import SuggestionsSearch.DataSearch;
-import SuggestionsSearch.PanelSearch;
+
+import dao.PanelSearch;
 import java.awt.Color;
 import java.awt.Component;
 import java.awt.Font;

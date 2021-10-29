@@ -3,13 +3,14 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package SuggestionsSearch;
+package dao;
 
+import entity.KhachHang;
+import entity.SanPham;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.List;
 import net.miginfocom.swing.MigLayout;
-
 
 /**
  *
@@ -28,9 +29,9 @@ public class PanelSearch extends javax.swing.JPanel {
         setLayout(new MigLayout("fillx", "0[]0", "0[]0"));
     }
 
-    public void setData(List<DataSearch> data) {
+    public void setDataSP(List<SanPham> data) {
         this.removeAll();
-        for (DataSearch d : data) {
+        for (SanPham d : data) {
             Search_Item item = new Search_Item(d);
             //  add event
             item.addEvent(new ActionListener() {
@@ -39,15 +40,37 @@ public class PanelSearch extends javax.swing.JPanel {
                     //  when click
                     event.itemClick(d);
                 }
-            }, new ActionListener() {
+            });
+
+            this.add(item, "wrap");
+        }
+        repaint();
+        revalidate();
+        //  Refresh Component
+    }
+    
+    public void setDataKh(List<KhachHang> data) {
+        this.removeAll();
+        for (KhachHang d : data) {
+            Search_KhachHang kh = new Search_KhachHang(d);
+            
+            //  add event
+            kh.addEvent(new ActionListener() {
                 @Override
                 public void actionPerformed(ActionEvent ae) {
-                    //  when remove
-                    event.itemRemove(item, d);
-
+                    //  when click
+                    event.itemClick(d);
                 }
             });
-            this.add(item, "wrap");
+//, new ActionListener() {
+//                @Override
+//                public void actionPerformed(ActionEvent ae) {
+//                    //  when remove
+//                    event.itemRemove(item, d);
+//
+//                }
+//            });
+            this.add(kh, "wrap");
             //  wrap mean add to new row after this add
             //  this for miglayout option
         }

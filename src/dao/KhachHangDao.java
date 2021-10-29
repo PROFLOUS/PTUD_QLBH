@@ -7,10 +7,14 @@ package dao;
 import Connect.connect;
 import entity.KhachHang;
 import entity.NhanVien;
+import entity.SanPham;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 /**
  *
@@ -19,10 +23,12 @@ import java.util.Date;
 public class KhachHangDao {
      private ArrayList<KhachHang> listKH;
     private KhachHang khachHang;
+    private final Connection con;
     
      public KhachHangDao() {
        listKH = new ArrayList<KhachHang>();
        khachHang = new KhachHang();
+       con = connect.getInstance().getConnection();
     }
      
      
@@ -48,9 +54,26 @@ public class KhachHangDao {
             }
                
                return kh;
-             
-        
-        
-     
+
     } 
+      
+      
+      //tìm kím sdt kh
+      public List<KhachHang> SearchKh(String text){
+            List<KhachHang> list = new ArrayList<>();
+            try {
+                PreparedStatement stmt = con.prepareStatement("select top 3 * from KhachHang where [SDT] like  ? ");
+                
+                stmt.setString(1,"%"+text+"%");
+                ResultSet rs = stmt.executeQuery();
+                while(rs.next()) {
+ 
+                KhachHang kh = new KhachHang(rs.getString(1), rs.getString(2), rs.getString(3));
+                list.add(kh);
+            }
+            } catch (Exception e) {
+            }
+            
+            return list;
+        }
 }
