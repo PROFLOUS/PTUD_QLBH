@@ -63,7 +63,7 @@ public class GD_Chinh extends javax.swing.JFrame {
         setResizable(false);
         setLocationRelativeTo(null);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
-        Slider();
+      //  Slider();
 //        setShape(new RoundRectangle2D.Double(0, 0, getWidth(), getHeight(), 30, 30));
 //        addBorder();
         
@@ -173,12 +173,19 @@ public class GD_Chinh extends javax.swing.JFrame {
         } catch (java.sql.SQLException e1) {
             e1.printStackTrace();
         }
+
+ 	
         pnl_tab_FormTKHoaDon = new javax.swing.JPanel();
         frmSanPham2 = new Gui.FrmSanPham();
         frmKhachHang1 = new Gui.FrmKhachHang();
         frmBanHang1 = new Gui.FrmBanHang();
         frmNhanVien1 = new Gui.FrmNhanVien();
-        frmNhaCungCap1 = new Gui.FrmNhaCungCap();
+       
+	 try {
+            frmNhaCungCap1= new Gui.FrmNhaCungCap();
+        } catch (java.sql.SQLException e1) {
+            e1.printStackTrace();
+        }
         frmHeThong1 = new Gui.FrmHeThong();
         frmThongKe1 = new Gui.FrmThongKe();
         frmThongTinTaiKhoan1 = new Gui.FrmThongTinTaiKhoan();
