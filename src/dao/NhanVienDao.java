@@ -75,4 +75,45 @@ public class NhanVienDao {
         
      
     } 
+    
+    
+     //lay thong tin nhan vien
+    //Công việc chưa lấy ra
+    /*
+       
+        return arraylist NhanVien
+    */
+     public ArrayList<NhanVien> getDsNhanVien(){
+         NhanVien nv = null;
+            try {
+                 
+                java.sql.Connection con = connect.getInstance().getConnection();
+                String sql = "select * from NhanVien";
+                Statement statement = con.createStatement();
+			ResultSet rs = statement.executeQuery(sql);
+			while(rs.next()) {
+				String maNhanVien = rs.getString(1);
+                                String tenNV = rs.getString(2);
+                                String sdt = rs.getString(3);
+                                 Date ngaySinh = rs.getDate(4);
+                                 String diaChi = rs.getString(5);
+                                 Date ngayVaoLam = rs.getDate(6);
+                                 String tinhTrang = rs.getString(7);
+                                 String maCV = rs.getString(8);
+				
+                            
+                                nv = new NhanVien(maCV, tenNV, sdt, diaChi, ngaySinh, ngayVaoLam, tinhTrang);
+                                listNV.add(nv);
+                                
+			}
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+               
+               return listNV;
+             
+        
+        
+     
+    } 
 }

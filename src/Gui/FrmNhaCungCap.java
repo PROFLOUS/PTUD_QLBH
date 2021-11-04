@@ -188,7 +188,7 @@ public class FrmNhaCungCap extends javax.swing.JPanel {
 
         pnl_tab_FormTKNCC.setBackground(new java.awt.Color(204, 204, 255));
 
-        pnl_tab_Form_DSNCC.setBackground(new java.awt.Color(207, 218, 200));
+        pnl_tab_Form_DSNCC.setBackground(new java.awt.Color(243, 244, 237));
 
         jPanel1.setBackground(java.awt.Color.white);
         jPanel1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -287,7 +287,7 @@ public class FrmNhaCungCap extends javax.swing.JPanel {
                 .addGap(33, 33, 33)
                 .addComponent(lblEmailNCC)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txtEmail, javax.swing.GroupLayout.DEFAULT_SIZE, 278, Short.MAX_VALUE)
+                .addComponent(txtEmail)
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
@@ -434,10 +434,10 @@ public class FrmNhaCungCap extends javax.swing.JPanel {
                     .addComponent(txtSearch, javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btnShow, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 36, Short.MAX_VALUE)
                     .addComponent(btnTimKiem, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnXoa, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btnCapNhat, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btnLuu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnThem, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(btnThem, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnXoa, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
 
@@ -478,12 +478,11 @@ public class FrmNhaCungCap extends javax.swing.JPanel {
             pnl_tab_Form_DSNCCLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnl_tab_Form_DSNCCLayout.createSequentialGroup()
                 .addGap(26, 26, 26)
-                .addGroup(pnl_tab_Form_DSNCCLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(pnl_tab_Form_DSNCCLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addComponent(jScrollPane2)
-                        .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                .addContainerGap(389, Short.MAX_VALUE))
+                .addGroup(pnl_tab_Form_DSNCCLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(jScrollPane2)
+                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(406, Short.MAX_VALUE))
         );
         pnl_tab_Form_DSNCCLayout.setVerticalGroup(
             pnl_tab_Form_DSNCCLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -493,8 +492,8 @@ public class FrmNhaCungCap extends javax.swing.JPanel {
                 .addGap(18, 18, 18)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 351, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(276, Short.MAX_VALUE))
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 354, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout pnl_tab_FormTKNCCLayout = new javax.swing.GroupLayout(pnl_tab_FormTKNCC);
@@ -507,12 +506,10 @@ public class FrmNhaCungCap extends javax.swing.JPanel {
         );
         pnl_tab_FormTKNCCLayout.setVerticalGroup(
             pnl_tab_FormTKNCCLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnl_tab_FormTKNCCLayout.createSequentialGroup()
-                .addComponent(pnl_tab_Form_DSNCC, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(pnl_tab_Form_DSNCC, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
-        pnl_FormNhaCungCap.add(pnl_tab_FormTKNCC, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 80, 1300, 720));
+        pnl_FormNhaCungCap.add(pnl_tab_FormTKNCC, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 80, 1300, 640));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -527,7 +524,7 @@ public class FrmNhaCungCap extends javax.swing.JPanel {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 800, Short.MAX_VALUE)
+            .addGap(0, 720, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addGap(0, 0, Short.MAX_VALUE)
@@ -555,7 +552,7 @@ public class FrmNhaCungCap extends javax.swing.JPanel {
 
     private void txtMaNCC1FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtMaNCC1FocusGained
         // TODO add your handling code here:
-        ///txtMaNCC1.setText("");
+        ///txtMaNCC1.setTe txtMaNCC1.setForeground(new java.awt.Color(26, 25, 25));xt("");
          txtMaNCC1.setForeground(new java.awt.Color(26, 25, 25));
     }//GEN-LAST:event_txtMaNCC1FocusGained
 
@@ -674,7 +671,7 @@ public class FrmNhaCungCap extends javax.swing.JPanel {
     //clck vao capnhat de cap nhat lai NCC
     private void btnCapNhatMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCapNhatMouseClicked
            if(checkValue()){
-                String MaNcc = txtMaNCC1.getText();
+            String MaNcc = txtMaNCC1.getText();
             String TenNCC = txtTenNCC.getText();
             String sdt = txtSDTNCC2.getText();
             String email = txtEmail.getText();
