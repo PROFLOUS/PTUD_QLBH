@@ -98,12 +98,6 @@ public class FrmSanPham extends javax.swing.JPanel {
         btn_tab_DMSanPham = new javax.swing.JButton();
         btn_tab_NhaCungCap = new javax.swing.JButton();
         pnl_tab_FormSanPham = new javax.swing.JPanel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
         pnl_tab_FormDMSanPham = new javax.swing.JPanel();
         pnl_tab_FormTKSP = new javax.swing.JPanel();
 
@@ -191,59 +185,15 @@ public class FrmSanPham extends javax.swing.JPanel {
 
         pnl_tab_FormSanPham.setBackground(new java.awt.Color(0, 153, 153));
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
-            }
-        ));
-        jScrollPane1.setViewportView(jTable1);
-
-        jButton1.setText("jButton1");
-
-        jButton2.setText("jButton2");
-
-        jButton3.setText("jButton3");
-
-        jButton4.setText("jButton4");
-
         javax.swing.GroupLayout pnl_tab_FormSanPhamLayout = new javax.swing.GroupLayout(pnl_tab_FormSanPham);
         pnl_tab_FormSanPham.setLayout(pnl_tab_FormSanPhamLayout);
         pnl_tab_FormSanPhamLayout.setHorizontalGroup(
             pnl_tab_FormSanPhamLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 1090, Short.MAX_VALUE)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnl_tab_FormSanPhamLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jButton2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton1)
-                .addGap(30, 30, 30))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnl_tab_FormSanPhamLayout.createSequentialGroup()
-                .addGap(18, 18, 18)
-                .addComponent(jButton4)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton3)
-                .addGap(24, 24, 24))
+            .addGap(0, 1090, Short.MAX_VALUE)
         );
         pnl_tab_FormSanPhamLayout.setVerticalGroup(
             pnl_tab_FormSanPhamLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnl_tab_FormSanPhamLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(pnl_tab_FormSanPhamLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton3)
-                    .addComponent(jButton4))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 180, Short.MAX_VALUE)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 327, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(49, 49, 49)
-                .addGroup(pnl_tab_FormSanPhamLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
-                    .addComponent(jButton2))
-                .addGap(14, 14, 14))
+            .addGap(0, 620, Short.MAX_VALUE)
         );
 
         pnl_FormSanPham.add(pnl_tab_FormSanPham, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 80, 1090, 620));
@@ -334,12 +284,6 @@ public class FrmSanPham extends javax.swing.JPanel {
     private javax.swing.JButton btn_tab_DMSanPham;
     private javax.swing.JButton btn_tab_NhaCungCap;
     private javax.swing.JButton btn_tab_SanPham;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
     private javax.swing.JLabel lbl_text_SanPham;
     private javax.swing.JPanel pnl_FormSanPham;
     private javax.swing.JPanel pnl_menuTab_SanPham;
