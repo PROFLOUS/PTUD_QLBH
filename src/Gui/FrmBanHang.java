@@ -844,7 +844,7 @@ public class FrmBanHang extends javax.swing.JPanel {
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1090, Short.MAX_VALUE)
+            .addGap(0, 1091, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addGap(0, 0, Short.MAX_VALUE)
@@ -1011,6 +1011,10 @@ public class FrmBanHang extends javax.swing.JPanel {
 
     private void btn_ThanhToanMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_ThanhToanMouseClicked
        
+        System.out.println("ok");
+        
+        
+       
         
     }//GEN-LAST:event_btn_ThanhToanMouseClicked
 
@@ -1136,6 +1140,7 @@ public class FrmBanHang extends javax.swing.JPanel {
         }else if(km==30){
             tienKm = (tong *50/100);
             lbl_TienPhaiTra.setText(tienKm+"");
+            
         }
         
         

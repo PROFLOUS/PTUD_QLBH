@@ -61,7 +61,7 @@ public class GD_Chinh extends javax.swing.JFrame {
         Slider();
 //        setShape(new RoundRectangle2D.Double(0, 0, getWidth(), getHeight(), 30, 30));
 //        addBorder();
-
+         
     }
 
     /**
